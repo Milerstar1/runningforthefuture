@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FCA River Run</title>
-
+<title>FCA River Run 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -13,47 +12,61 @@
   --accent:#e74c3c;
   --dark:#2c3e50;
 }
-
 *{box-sizing:border-box;margin:0;padding:0;}
-
 body{
   font-family:'Montserrat',sans-serif;
   background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb);
   background-size:400% 400%;
   animation:gradientBG 15s ease infinite;
   color:#333;
+  line-height:1.6;
 }
-
 @keyframes gradientBG{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
-
 header{
   background:rgba(41,128,185,.95);
   color:white;
   text-align:center;
   padding:3rem 1rem;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-
-main{max-width:1100px;margin:auto;padding:1.5rem;}
-
+header h1{
+  font-size:2.8rem;
+  margin-bottom:.5rem;
+}
+main{
+  max-width:1100px;
+  margin:2rem auto;
+  padding:0 1.5rem;
+}
 .section{
-  background:white;
-  padding:2rem;
   margin:2rem 0;
+  padding:2rem;
+  background:#ffffffee;
   border-radius:12px;
   box-shadow:0 4px 12px rgba(0,0,0,.08);
   text-align:center;
 }
-
+.section h2{
+  font-size:1.75rem;
+  color:var(--primary);
+  margin-bottom:1rem;
+}
 .highlight{
   color:var(--accent);
-  font-size:1.6rem;
   font-weight:800;
+  font-size:1.75rem;
 }
-
+.section img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:1rem auto;
+  border-radius:10px;
+}
 .button-group{
   display:flex;
   flex-wrap:wrap;
@@ -61,55 +74,133 @@ main{max-width:1100px;margin:auto;padding:1.5rem;}
   gap:1rem;
   margin-top:1rem;
 }
-
 .button-group a{
-  background:var(--primary);
-  color:white;
+  display:inline-block;
   padding:.75rem 1.5rem;
-  border-radius:30px;
+  font-size:1rem;
   text-decoration:none;
-  font-weight:600;
-  transition:.3s;
-}
-
-.button-group a:hover{background:var(--dark);}
-
-footer{
-  background:var(--dark);
   color:white;
+  background-color:var(--primary);
+  border-radius:30px;
+  transition:background-color .3s ease;
+  font-weight:600;
+}
+.button-group a:hover{background-color:var(--dark);}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:1rem;
+  background:#f9f9f9;
+  border-radius:10px;
+  overflow:hidden;
+}
+th, td{
+  padding:1rem;
   text-align:center;
-  padding:2rem;
+  border-bottom:1px solid #ddd;
+}
+tr:last-child td{border-bottom:none;}
+footer{
+  text-align:center;
+  padding:2rem 1rem;
+  background-color:var(--dark);
+  color:white;
+  margin-top:3rem;
+}
+.note{
+  background-color:#ecf0f1;
+  padding:1rem;
+  border-radius:8px;
+  color:#27ae60;
+  text-align:center;
+  font-weight:600;
+  margin-top:2rem;
+}
+a.mail{
+  color:#e67e22;
+  font-weight:bold;
+}
+@media(max-width:768px){
+  header h1{font-size:2rem;}
+  .button-group a{font-size:.9rem;padding:.5rem 1rem;}
+  table, th, td{font-size:.9rem;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>FCA River Run 5K/10K & 20# Ruck</h1>
+  <h1>FCA River Run 5k/10k & 20# Ruck 5k</h1>
 </header>
 
 <main>
+  <div class="section">
+    <p class="highlight">Our 19th annual event is complete!!</p>
+    <p class="highlight">Thank you to everyone who participated and helped, and all of our amazing sponsors!</p>
+    <img src="newracelogocross2025.png" alt="Race Logo 2025">
+    <p style="font-size:1.2rem; color:#c0392b;">
+      Mark your calendar, invite your friends and neighbors! The 20th annual race is Saturday Sept 5.
+    </p>
+  </div>
 
-<div class="section">
-<p class="highlight">20th Annual Race — Saturday Sept 5</p>
-<img src="newracelogocross2025.png" style="max-width:300px;">
-</div>
+  <div class="section">
+    <p style="font-size:1.1rem;"><strong>A portion of the proceeds will be donated to the American Cancer Society</strong></p>
+    <p><a href="acslogo.png"><img src="acslogo.png" alt="ACS Logo" style="max-height:80px;"></a></p>
+  </div>
 
-<div class="section">
-<h2>Register</h2>
-<p>Race Day Registration: 7:00–7:55 AM</p>
+  <div class="section">
+    <h2>Register (Choose One)</h2>
+    <p><strong>Race Day:</strong> Between 7:00am and 7:55am</p>
+    <div class="button-group">
+      <a href="entryform.pdf">📄 Printable Entry Form</a>
+      <a href="register.html">💻 Online Registration</a>
+    </div>
+  </div>
 
-<div class="button-group">
-<a href="entryform.pdf">📄 Printable Entry Form</a>
-<a href="register.html">💻 Online Registration</a>
-</div>
-</div>
+  <div class="section">
+    <h2>Course Maps</h2>
+    <div class="button-group">
+      <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47733372">5k and 20# Ruck</a>
+      <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47737678">10k</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Results</h2>
+    <table>
+      <tr>
+        <td>2018 <a href="201810kresults.pdf">10k</a></td>
+        <td>2021 <a href="20215kresults.pdf">5k</a> / 10k</td>
+      </tr>
+      <tr>
+        <td>2019 <a href="5kresults2019.pdf">5k</a> / <a href="10kresults2019.pdf">10k</a></td>
+        <td>2022 <a href="20225kresults.pdf">5k</a> / <a href="202210kresults.pdf">10k</a></td>
+      </tr>
+      <tr>
+        <td>2020 N/A</td>
+        <td>2023 <a href="20235kresults.pdf">5k</a> / <a href="202310kresults.pdf">10k</a> / <a href="20235kruckresults.pdf">20# Ruck</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">2024 <a href="20245kresults.pdf">5k</a> / <a href="202410kresults.pdf">10k</a> / <a href="20245kruckresults.pdf">20# Ruck</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">2025 <a href="2025riverrun5kresults.pdf">5k</a> / <a href="2025riverrun10kresults.pdf">10k</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <p>Comments or questions? Contact: <a class="mail" href="mailto:milerstar1@gmail.com">Jim Cera</a> – Race Director</p>
+  </div>
+
+  <div class="note">
+    *Ruck is walking or hiking while carrying a weighted rucksack or backpack. In this case, a 20 lb weight.
+  </div>
 
 </main>
 
 <footer>
-<p>&copy; 2026 FCA River Run</p>
+  <p>&copy; 2025 FCA River Run | All Rights Reserved</p>
 </footer>
 
 </body>
