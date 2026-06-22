@@ -1,207 +1,484 @@
+Save the following as **index.html**. This is a complete modernized single-file version of your FCA River Run website.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FCA River Run 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<title>FCA River Run | 20th Annual Event</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --primary:#2980b9;
-  --accent:#e74c3c;
-  --dark:#2c3e50;
+    --primary:#2563eb;
+    --secondary:#06b6d4;
+    --dark:#0f172a;
+    --light:#f8fafc;
+    --text:#1e293b;
+    --muted:#64748b;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(0,0,0,.12);
+    --radius:24px;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-  font-family:'Montserrat',sans-serif;
-  background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb);
-  background-size:400% 400%;
-  animation:gradientBG 15s ease infinite;
-  color:#333;
-  line-height:1.6;
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
 }
-@keyframes gradientBG{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+
+/* HERO */
+
+.hero{
+    min-height:75vh;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(37,99,235,.92),
+        rgba(6,182,212,.85)
+    );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:4rem 1.5rem;
 }
-header{
-  background:rgba(41,128,185,.95);
-  color:white;
-  text-align:center;
-  padding:3rem 1rem;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+.hero-content{
+    max-width:900px;
 }
-header h1{
-  font-size:2.8rem;
-  margin-bottom:.5rem;
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:.8rem 1.5rem;
+    border-radius:999px;
+    font-weight:600;
+    margin-bottom:1.5rem;
 }
-main{
-  max-width:1100px;
-  margin:2rem auto;
-  padding:0 1.5rem;
+
+.hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+    font-weight:900;
+    line-height:1;
+    margin-bottom:1rem;
 }
-.section{
-  margin:2rem 0;
-  padding:2rem;
-  background:#ffffffee;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
-  text-align:center;
+
+.hero p{
+    font-size:1.25rem;
+    margin-bottom:2rem;
 }
-.section h2{
-  font-size:1.75rem;
-  color:var(--primary);
-  margin-bottom:1rem;
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
 }
+
+.btn{
+    text-decoration:none;
+    padding:1rem 2rem;
+    border-radius:999px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:white;
+    color:var(--primary);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--primary);
+}
+
+/* MAIN */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:3rem 1.5rem;
+}
+
+.card{
+    background:white;
+    border-radius:var(--radius);
+    padding:2rem;
+    margin-bottom:2rem;
+    box-shadow:var(--shadow);
+}
+
+.card h2{
+    color:var(--primary);
+    margin-bottom:1rem;
+    text-align:center;
+}
+
 .highlight{
-  color:var(--accent);
-  font-weight:800;
-  font-size:1.75rem;
+    font-size:1.5rem;
+    font-weight:800;
+    color:#dc2626;
+    text-align:center;
+    margin-bottom:1rem;
 }
-.section img{
-  max-width:100%;
-  height:auto;
-  display:block;
-  margin:1rem auto;
-  border-radius:10px;
+
+.logo{
+    display:block;
+    max-width:400px;
+    width:100%;
+    margin:1.5rem auto;
 }
+
 .button-group{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:1rem;
-  margin-top:1rem;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-top:1.5rem;
 }
+
 .button-group a{
-  display:inline-block;
-  padding:.75rem 1.5rem;
-  font-size:1rem;
-  text-decoration:none;
-  color:white;
-  background-color:var(--primary);
-  border-radius:30px;
-  transition:background-color .3s ease;
-  font-weight:600;
+    text-decoration:none;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color:white;
+    padding:1rem 1.75rem;
+    border-radius:999px;
+    font-weight:700;
+    transition:.3s;
 }
-.button-group a:hover{background-color:var(--dark);}
+
+.button-group a:hover{
+    transform:translateY(-3px);
+}
+
+.center{
+    text-align:center;
+}
+
+/* RESULTS TABLE */
+
 table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:1rem;
-  background:#f9f9f9;
-  border-radius:10px;
-  overflow:hidden;
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:16px;
 }
-th, td{
-  padding:1rem;
-  text-align:center;
-  border-bottom:1px solid #ddd;
+
+th{
+    background:var(--primary);
+    color:white;
 }
-tr:last-child td{border-bottom:none;}
+
+th,td{
+    padding:1rem;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f1f5f9;
+}
+
+tr:hover{
+    background:#dbeafe;
+}
+
+/* SPONSOR */
+
+.sponsor{
+    text-align:center;
+}
+
+.sponsor img{
+    max-height:100px;
+    margin:1rem auto;
+}
+
+/* FOOTER */
+
 footer{
-  text-align:center;
-  padding:2rem 1rem;
-  background-color:var(--dark);
-  color:white;
-  margin-top:3rem;
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:3rem 1rem;
 }
+
+footer a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
 .note{
-  background-color:#ecf0f1;
-  padding:1rem;
-  border-radius:8px;
-  color:#27ae60;
-  text-align:center;
-  font-weight:600;
-  margin-top:2rem;
+    background:#e0f2fe;
+    border-left:5px solid var(--secondary);
+    padding:1rem;
+    border-radius:12px;
+    margin-top:2rem;
 }
-a.mail{
-  color:#e67e22;
-  font-weight:bold;
-}
+
 @media(max-width:768px){
-  header h1{font-size:2rem;}
-  .button-group a{font-size:.9rem;padding:.5rem 1rem;}
-  table, th, td{font-size:.9rem;}
+
+.hero{
+    min-height:60vh;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.card{
+    padding:1.5rem;
+}
+
+table{
+    font-size:.9rem;
+}
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>2026 FCA River Run 5k/10k & 20# Ruck 5k</h1>
+<header class="hero">
+    <div class="hero-content">
+
+        <div class="badge">
+            20th Annual Event • September 5, 2026
+        </div>
+
+        <h1>FCA River Run</h1>
+
+        <p>
+            5K • 10K • 20 lb Ruck Challenge<br>
+            Running for a Purpose Since 2007
+        </p>
+
+        <div class="hero-buttons">
+            <a href="register.html" class="btn btn-primary">
+                Register Online
+            </a>
+
+            <a href="#results" class="btn btn-outline">
+                View Results
+            </a>
+        </div>
+
+    </div>
 </header>
 
-<main>
-  <div class="section">
-    <p class="highlight">Our 20th annual event is coming September 5!!</p>
-    <p class="highlight">We look forward to seeing everyone who has participated in the past as well as a lot of new faces!!</p>
-    <img src="newracelogocross2025.png" alt="Race Logo 2025">
-    <p style="font-size:1.2rem; color:#c0392b;">
-      Mark your calendar, invite your friends and neighbors!
-    </p>
-  </div>
+<main class="container">
 
-  <div class="section">
-    <p style="font-size:1.1rem;"><strong>A moderate portion of the proceeds will be donated to the American Cancer Society</strong></p>
-    <p><a href="acslogo.png"><img src="acslogo.png" alt="ACS Logo" style="max-height:80px;"></a></p>
-  </div>
+    <section class="card">
 
-  <div class="section">
-    <h2>Register (Choose One)</h2>
-    <p><strong>Race Day:</strong> Between 7:00am and 7:55am</p>
-    <div class="button-group">
-      <a href="entryform.pdf">📄 Printable Entry Form</a>
-      <a href="https://www.active.com/wathena-ks/running/distance-running-races/20th-annual-wathena-river-run-2026">💻 Online Registration</a>
+        <p class="highlight">
+            Thank You for an Amazing 2025 FCA River Run!
+        </p>
+
+        <p class="highlight">
+            We appreciate all participants, volunteers, sponsors, and supporters who helped make this year's event a success.
+        </p>
+
+        <img src="newracelogocross2025.png"
+             alt="FCA River Run Logo"
+             class="logo">
+
+        <div class="center">
+            <h2>Join Us Again in 2026</h2>
+
+            <p>
+                Mark your calendars for the
+                <strong>20th Annual FCA River Run</strong>
+                on Saturday, September 5, 2026.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="card sponsor">
+
+        <h2>Supporting the American Cancer Society</h2>
+
+        <img src="acslogo.png" alt="American Cancer Society Logo">
+
+        <p>
+            A portion of race proceeds benefits the
+            American Cancer Society.
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Registration</h2>
+
+        <div class="center">
+            <p><strong>Race Day Registration:</strong> 7:00 AM – 7:55 AM</p>
+        </div>
+
+        <div class="button-group">
+            <a href="entryform.pdf">
+                Printable Entry Form
+            </a>
+
+            <a href="register.html">
+                Online Registration
+            </a>
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Course Maps</h2>
+
+        <div class="button-group">
+
+            <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47733372" target="_blank">
+                5K & 20 lb Ruck
+            </a>
+
+            <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47737678" target="_blank">
+                10K Course
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="card" id="results">
+
+        <h2>Race Results</h2>
+
+        <table>
+
+            <tr>
+                <td>2018 <a href="201810kresults.pdf">10K</a></td>
+                <td>2021 <a href="20215kresults.pdf">5K</a> / 10K</td>
+            </tr>
+
+            <tr>
+                <td>
+                    2019
+                    <a href="5kresults2019.pdf">5K</a> /
+                    <a href="10kresults2019.pdf">10K</a>
+                </td>
+
+                <td>
+                    2022
+                    <a href="20225kresults.pdf">5K</a> /
+                    <a href="202210kresults.pdf">10K</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2020 N/A</td>
+
+                <td>
+                    2023
+                    <a href="20235kresults.pdf">5K</a> /
+                    <a href="202310kresults.pdf">10K</a> /
+                    <a href="20235kruckresults.pdf">Ruck</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    2024
+                    <a href="20245kresults.pdf">5K</a> /
+                    <a href="202410kresults.pdf">10K</a> /
+                    <a href="20245kruckresults.pdf">Ruck</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    2025
+                    <a href="2025riverrun5kresults.pdf">5K</a> /
+                    <a href="2025riverrun10kresults.pdf">10K</a>
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <section class="card center">
+
+        <h2>Contact</h2>
+
+        <p>
+            Questions or comments?
+        </p>
+
+        <p>
+            <strong>Jim Cera</strong><br>
+            Race Director
+        </p>
+
+        <p>
+            <a href="mailto:milerstar1@gmail.com">
+                milerstar1@gmail.com
+            </a>
+        </p>
+
+    </section>
+
+    <div class="note">
+        <strong>What is a Ruck?</strong><br>
+        Rucking is walking or hiking while carrying a weighted backpack.
+        Participants in the FCA River Run Ruck Division carry a 20-pound pack during the event.
     </div>
-  </div>
-
-  <div class="section">
-    <h2>Course Maps</h2>
-    <div class="button-group">
-      <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47733372">5k and 20# Ruck</a>
-      <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47737678">10k</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Results</h2>
-    <table>
-      <tr>
-        <td>2018 <a href="201810kresults.pdf">10k</a></td>
-        <td>2021 <a href="20215kresults.pdf">5k</a> / 10k</td>
-      </tr>
-      <tr>
-        <td>2019 <a href="5kresults2019.pdf">5k</a> / <a href="10kresults2019.pdf">10k</a></td>
-        <td>2022 <a href="20225kresults.pdf">5k</a> / <a href="202210kresults.pdf">10k</a></td>
-      </tr>
-      <tr>
-        <td>2020 N/A</td>
-        <td>2023 <a href="20235kresults.pdf">5k</a> / <a href="202310kresults.pdf">10k</a> / <a href="20235kruckresults.pdf">20# Ruck</a></td>
-      </tr>
-      <tr>
-        <td colspan="2">2024 <a href="20245kresults.pdf">5k</a> / <a href="202410kresults.pdf">10k</a> / <a href="20245kruckresults.pdf">20# Ruck</a></td>
-      </tr>
-      <tr>
-        <td colspan="2">2025 <a href="2025riverrun5kresults.pdf">5k</a> / <a href="2025riverrun10kresults.pdf">10k</a></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <p>Comments or questions? Contact: <a class="mail" href="mailto:milerstar1@gmail.com">Jim Cera</a> – Race Director</p>
-  </div>
-
-  <div class="note">
-    *Ruck is walking or hiking while carrying a weighted rucksack or backpack. In this case, a 20 lb weight.
-  </div>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 FCA River Run | All Rights Reserved</p>
+
+    <h3>FCA River Run</h3>
+
+    <p>
+        20th Annual Event • September 5, 2026
+    </p>
+
+    <p>
+        © 2026 FCA River Run. All Rights Reserved.
+    </p>
+
 </footer>
 
 </body>
 </html>
+```
