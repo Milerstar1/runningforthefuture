@@ -1,525 +1,152 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Riverside FCA River Run 2026</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
 :root{
-    --primary:#2563eb;
-    --secondary:#06b6d4;
-    --dark:#0f172a;
-    --light:#f8fafc;
-    --text:#1e293b;
-    --white:#ffffff;
-    --shadow:0 15px 40px rgba(0,0,0,.12);
-    --radius:24px;
+--river:#0ea5e9;--forest:#16a34a;--sky:#38bdf8;--sunrise:#f97316;--navy:#082f49;
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--light);
-    color:var(--text);
-    line-height:1.7;
-}
-
-/* HERO SECTION */
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:#eef6fb;color:#fff}
 .hero{
-    min-height:75vh;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(37,99,235,.92),
-            rgba(6,182,212,.85)
-        );
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    padding:4rem 1.5rem;
+min-height:100vh;
+background:
+linear-gradient(135deg,rgba(8,47,73,.72),rgba(14,165,233,.45),rgba(22,163,74,.35)),
+url('missouririver.jpg');
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;
 }
-
-.hero-content{
-    max-width:900px;
+.navbar{
+position:fixed;top:15px;left:50%;transform:translateX(-50%);
+width:min(1200px,95%);padding:14px 24px;
+background:rgba(255,255,255,.12);backdrop-filter:blur(15px);
+border-radius:20px;display:flex;justify-content:space-between;z-index:1000;
 }
-
-.badge{
-    display:inline-block;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(12px);
-    padding:.8rem 1.5rem;
-    border-radius:999px;
-    font-weight:600;
-    margin-bottom:1.5rem;
+.navbar a{color:white;text-decoration:none;margin-left:18px;font-weight:700}
+.glass{
+background:rgba(255,255,255,.14);backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.2);border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
-
-.hero h1{
-    font-size:clamp(3rem,8vw,6rem);
-    font-weight:900;
-    line-height:1;
-    margin-bottom:1rem;
+.hero-content{max-width:900px;padding:2rem}
+.badge{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;background:rgba(255,255,255,.15);margin-bottom:1rem}
+h1{font-size:clamp(3rem,8vw,6rem);font-weight:900}
+.btn{display:inline-block;margin:.5rem;padding:1rem 2rem;border-radius:999px;text-decoration:none;font-weight:800}
+.primary{background:#fff;color:#082f49}
+.secondary{border:2px solid #fff;color:#fff}
+.container{width:min(1200px,92%);margin:auto;padding:3rem 0}
+section{padding:2rem;margin:2rem 0}
+h2{text-align:center;margin-bottom:1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.stat{padding:1rem;background:rgba(255,255,255,.12);border-radius:20px;text-align:center}
+.countdown{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.count{padding:1rem;border-radius:20px;background:rgba(255,255,255,.15);min-width:100px}
+.count span{display:block;font-size:2rem;font-weight:900}
+.center{text-align:center}
+table{width:100%;border-collapse:collapse}
+td{padding:12px;border-bottom:1px solid rgba(255,255,255,.2)}
+footer{text-align:center;padding:3rem;background:#082f49}
+.floating-register{
+position:fixed;right:20px;bottom:20px;background:white;color:#082f49;
+padding:1rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:900;
 }
-
-.hero p{
-    font-size:1.25rem;
-    margin-bottom:2rem;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:1rem;
-    flex-wrap:wrap;
-}
-
-.btn{
-    text-decoration:none;
-    padding:1rem 2rem;
-    border-radius:999px;
-    font-weight:700;
-    transition:.3s ease;
-}
-
-.btn-primary{
-    background:white;
-    color:var(--primary);
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-}
-
-.btn-outline{
-    border:2px solid white;
-    color:white;
-}
-
-.btn-outline:hover{
-    background:white;
-    color:var(--primary);
-}
-
-/* MAIN CONTENT */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:3rem 1.5rem;
-}
-
-.card{
-    background:white;
-    border-radius:var(--radius);
-    padding:2rem;
-    margin-bottom:2rem;
-    box-shadow:var(--shadow);
-}
-
-.card h2{
-    color:var(--primary);
-    margin-bottom:1rem;
-    text-align:center;
-}
-
-.highlight{
-    font-size:2rem;
-    font-weight:800;
-    color:#dc2626;
-    text-align:center;
-    margin-bottom:.75rem;
-}
-
-.sub-highlight{
-    text-align:center;
-    font-size:1.3rem;
-    font-weight:700;
-    color:var(--primary);
-    margin-bottom:1.5rem;
-}
-
-.logo{
-    display:block;
-    max-width:450px;
-    width:100%;
-    margin:1.5rem auto;
-}
-
-.center{
-    text-align:center;
-}
-
-.button-group{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:1rem;
-    margin-top:1.5rem;
-}
-
-.button-group a{
-    text-decoration:none;
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
-    color:white;
-    padding:1rem 1.75rem;
-    border-radius:999px;
-    font-weight:700;
-    transition:.3s ease;
-}
-
-.button-group a:hover{
-    transform:translateY(-3px);
-}
-
-/* TABLE */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    overflow:hidden;
-    border-radius:16px;
-}
-
-th{
-    background:var(--primary);
-    color:white;
-}
-
-th,td{
-    padding:1rem;
-    text-align:center;
-}
-
-tr:nth-child(even){
-    background:#f1f5f9;
-}
-
-tr:hover{
-    background:#dbeafe;
-}
-
-/* SPONSOR */
-
-.sponsor{
-    text-align:center;
-}
-
-.sponsor img{
-    max-height:100px;
-    margin:1rem auto;
-}
-
-/* NOTE */
-
-.note{
-    background:#e0f2fe;
-    border-left:5px solid var(--secondary);
-    padding:1rem;
-    border-radius:12px;
-    margin-top:2rem;
-}
-
-/* FOOTER */
-
-footer{
-    background:var(--dark);
-    color:white;
-    text-align:center;
-    padding:3rem 1rem;
-}
-
-footer a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero{
-    min-height:60vh;
-}
-
-.hero h1{
-    font-size:3rem;
-}
-
-.hero p{
-    font-size:1rem;
-}
-
-.card{
-    padding:1.5rem;
-}
-
-table{
-    font-size:.9rem;
-}
-}
+@media(max-width:768px){.navbar{display:block;text-align:center} h1{font-size:3rem}}
 </style>
 </head>
-
 <body>
 
+<nav class="navbar glass">
+<div><strong>Riverside FCA River Run</strong></div>
+<div>
+<a href="#register">Register</a>
+<a href="#results">Results</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <header class="hero">
+<div class="hero-content">
+<div class="badge">20th Annual Event • September 5, 2026</div>
+<h1>Riverside FCA<br>River Run 2026</h1>
+<p>Celebrating 20 Years of Running, Community, Faith, and Purpose</p>
+<img src="newracelogocross2025.png" alt="logo" style="max-width:420px;width:100%;margin:2rem auto;display:block">
+<a href="register.html" class="btn primary">Register Online</a>
+<a href="entryform.pdf" class="btn secondary">Printable Entry Form</a>
 
-    <div class="hero-content">
-
-        <div class="badge">
-            20th Annual Event • September 5, 2026
-        </div>
-
-        <h1>Riverside FCA River Run</h1>
-
-        <p>
-            5K • 10K • 20 lb Ruck Challenge<br>
-            Running for a Purpose Since 2007
-        </p>
-
-        <div class="hero-buttons">
-            <a href="register.html" class="btn btn-primary">
-                Register Online
-            </a>
-
-            <a href="#results" class="btn btn-outline">
-                View Results
-            </a>
-        </div>
-
-    </div>
-
+<div class="countdown">
+<div class="count"><span id="days">0</span>Days</div>
+<div class="count"><span id="hours">0</span>Hours</div>
+<div class="count"><span id="minutes">0</span>Minutes</div>
+<div class="count"><span id="seconds">0</span>Seconds</div>
+</div>
+</div>
 </header>
 
-<main class="container">
+<div class="container">
 
-    <!-- FEATURED SECTION -->
+<section class="glass">
+<h2>Riverside FCA River Run 2026 is Here!</h2>
+<p class="center">Registration is now open for our 20th Annual Event.</p><br>
+<p class="center">Thank you to every participant, volunteer, sponsor, and supporter who helped make the 2025 Riverside FCA River Run a tremendous success.</p>
+<div class="stats" style="margin-top:2rem">
+<div class="stat"><h3>20th</h3><p>Annual Event</p></div>
+<div class="stat"><h3>5K</h3><p>Run</p></div>
+<div class="stat"><h3>10K</h3><p>Run</p></div>
+<div class="stat"><h3>20 lb</h3><p>Ruck</p></div>
+</div>
+</section>
 
-    <section class="card">
+<section id="register" class="glass">
+<h2>Registration</h2>
+<p class="center">Race Day Registration: 7:00 AM – 7:55 AM</p>
+<p class="center"><a class="btn primary" href="register.html">Online Registration</a></p>
+</section>
 
-        <p class="highlight">
-            Riverside FCA River Run 2026 is Here!
-        </p>
+<section class="glass">
+<h2>Supporting the American Cancer Society</h2>
+<p class="center"><img src="acslogo.png" style="max-height:100px"></p>
+<p class="center">A portion of race proceeds benefits the American Cancer Society.</p>
+</section>
 
-        <p class="sub-highlight">
-            Registration is Open for the 20th Annual Event • September 5, 2026
-        </p>
+<section id="results" class="glass">
+<h2>Race Results</h2>
+<table>
+<tr><td>2025 Results</td><td><a href="2025riverrun5kresults.pdf">5K</a> | <a href="2025riverrun10kresults.pdf">10K</a></td></tr>
+<tr><td>2024 Results</td><td><a href="20245kresults.pdf">View</a></td></tr>
+<tr><td>2023 Results</td><td><a href="20235kresults.pdf">View</a></td></tr>
+</table>
+</section>
 
-        <img
-            src="newracelogocross2025.png"
-            alt="Riverside FCA River Run Logo"
-            class="logo">
+<section id="contact" class="glass">
+<h2>Contact</h2>
+<p class="center"><strong>Jim Cera</strong><br>Race Director</p>
+<p class="center"><a href="mailto:milerstar1@gmail.com">milerstar1@gmail.com</a></p>
+</section>
 
-        <div class="center">
-
-            <h2>Thank You!</h2>
-
-            <p style="max-width:850px; margin:auto;">
-                Thank you to all of the runners, walkers, ruck participants,
-                volunteers, sponsors, and community supporters who made the
-                2025 Riverside FCA River Run a tremendous success.
-                Your participation helps us continue this tradition while
-                supporting worthwhile causes and promoting health, fitness,
-                and fellowship throughout our community. We look forward to
-                seeing everyone again for our 20th annual event in 2026.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- ACS -->
-
-    <section class="card sponsor">
-
-        <h2>Supporting the American Cancer Society</h2>
-
-        <img src="acslogo.png" alt="American Cancer Society Logo">
-
-        <p>
-            A portion of race proceeds benefits the
-            American Cancer Society.
-        </p>
-
-    </section>
-
-    <!-- REGISTRATION -->
-
-    <section class="card">
-
-        <h2>Registration</h2>
-
-        <div class="center">
-            <p>
-                <strong>Race Day Registration:</strong>
-                7:00 AM – 7:55 AM
-            </p>
-        </div>
-
-        <div class="button-group">
-
-            <a href="entryform.pdf">
-                Printable Entry Form
-            </a>
-
-            <a href="register.html">
-                Online Registration
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- COURSE MAPS -->
-
-    <section class="card">
-
-        <h2>Course Maps</h2>
-
-        <div class="button-group">
-
-            <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47733372" target="_blank">
-                5K & 20 lb Ruck
-            </a>
-
-            <a href="http://www.mapmyrun.com/us/saint-joseph-mo/a-run-mapped-on-08-25-2011-route-47737678" target="_blank">
-                10K Course
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- RESULTS -->
-
-    <section class="card" id="results">
-
-        <h2>Race Results</h2>
-
-        <table>
-
-            <tr>
-                <td>2018 <a href="201810kresults.pdf">10K</a></td>
-                <td>2021 <a href="20215kresults.pdf">5K</a> / 10K</td>
-            </tr>
-
-            <tr>
-                <td>
-                    2019
-                    <a href="5kresults2019.pdf">5K</a> /
-                    <a href="10kresults2019.pdf">10K</a>
-                </td>
-
-                <td>
-                    2022
-                    <a href="20225kresults.pdf">5K</a> /
-                    <a href="202210kresults.pdf">10K</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>2020 N/A</td>
-
-                <td>
-                    2023
-                    <a href="20235kresults.pdf">5K</a> /
-                    <a href="202310kresults.pdf">10K</a> /
-                    <a href="20235kruckresults.pdf">20 lb Ruck</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
-                    2024
-                    <a href="20245kresults.pdf">5K</a> /
-                    <a href="202410kresults.pdf">10K</a> /
-                    <a href="20245kruckresults.pdf">20 lb Ruck</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
-                    2025
-                    <a href="2025riverrun5kresults.pdf">5K</a> /
-                    <a href="2025riverrun10kresults.pdf">10K</a>
-                </td>
-            </tr>
-
-        </table>
-
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="card center">
-
-        <h2>Contact</h2>
-
-        <p>
-            Questions or comments?
-        </p>
-
-        <p>
-            <strong>Jim Cera</strong><br>
-            Race Director
-        </p>
-
-        <p>
-            <a href="mailto:milerstar1@gmail.com">
-                milerstar1@gmail.com
-            </a>
-        </p>
-
-    </section>
-
-    <!-- NOTE -->
-
-    <div class="note">
-
-        <strong>What is a Ruck?</strong><br>
-
-        Rucking is walking or hiking while carrying a weighted backpack.
-        Participants in the FCA River Run Ruck Division carry a 20-pound pack
-        during the event.
-
-    </div>
-
-</main>
+</div>
 
 <footer>
-
-    <h3>Riverside FCA River Run</h3>
-
-    <p>
-        20th Annual Event • September 5, 2026
-    </p>
-
-    <p>
-        © 2026 Riverside FCA River Run. All Rights Reserved.
-    </p>
-
+<h3>Riverside FCA River Run</h3>
+<p>September 5, 2026</p>
 </footer>
 
+<a class="floating-register" href="register.html">Register Now</a>
+
+<script>
+const raceDate = new Date("September 5, 2026 08:00:00").getTime();
+function updateCountdown(){
+const now = new Date().getTime();
+const d = raceDate - now;
+document.getElementById('days').textContent=Math.floor(d/(1000*60*60*24));
+document.getElementById('hours').textContent=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+document.getElementById('minutes').textContent=Math.floor((d%(1000*60*60))/(1000*60));
+document.getElementById('seconds').textContent=Math.floor((d%(1000*60))/1000);
+}
+setInterval(updateCountdown,1000);updateCountdown();
+</script>
 </body>
 </html>
-```
