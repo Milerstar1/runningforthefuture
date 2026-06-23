@@ -13,28 +13,29 @@
 html{scroll-behavior:smooth}
 body{font-family:Inter,sans-serif;background:#eef6fb;color:#0f172a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 
+/* New Aesthetically Pleasing Header Band replacing the old glass menu */
+.top-banner {
+background: var(--navy);
+color: #fff;
+text-align: center;
+padding: 1rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Reduced padding-top since navbar is no longer overlapping */
 .hero{
-min-height:100vh;
-padding-top: 120px; 
-padding-bottom: 2rem;
+min-height:90vh;
+padding-top: 3rem; 
+padding-bottom: 3rem;
 background:
 linear-gradient(135deg,rgba(8,47,73,.72),rgba(14,165,233,.45),rgba(22,163,74,.35)),
 url('missouririver.jpg');
 background-size:cover;background-position:center;
 display:flex;align-items:center;justify-content:center;text-align:center;
 }
-
-.navbar{
-position:fixed;top:15px;left:50%;transform:translateX(-50%);
-width:95%;max-width:1200px;padding:14px 24px;
-background:rgba(238, 246, 251, 0.92);
--webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px);
-border-radius:20px;display:flex;justify-content:space-between;z-index:1000;
-color:#082f49;
-box-shadow: 0 4px 20px rgba(8, 47, 73, 0.1);
-}
-.navbar a{color:#082f49;text-decoration:none;margin-left:18px;font-weight:700}
-.navbar a:focus, .btn:focus, .floating-register:focus{outline:3px solid var(--river);outline-offset:2px;}
 
 .glass{
 background:rgba(255,255,255,.20);
@@ -43,18 +44,19 @@ border:1px solid rgba(255,255,255,.3);border-radius:30px;
 box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
 .hero-content{max-width:900px;padding:2rem}
-.badge{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;background:rgba(255,255,255,.15);margin-bottom:1rem}
-h1{font-size:3.5rem;font-size:clamp(3rem,8vw,6rem);font-weight:900}
+.badge{display:inline-block;padding:.8rem 1.4rem;border-radius999px;background:rgba(255,255,255,.15);margin-bottom:1rem;color:#fff;}
+h1{font-size:3.5rem;font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;}
+.hero-content p {color:#fff;font-size:1.2rem;margin-bottom:1rem;}
 .btn{display:inline-block;margin:.5rem;padding:1rem 2rem;border-radius:999px;text-decoration:none;font-weight:800;transition:transform 0.2s ease}
 .btn:hover{transform:translateY(-2px)}
 .primary{background:#fff;color:#082f49;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-.secondary{border:2px solid #082f49;background:rgba(255,255,255,0.15);color:#082f49;}
+.secondary{border:2px solid #fff;background:rgba(255,255,255,0.15);color:#fff;}
 .container{width:92%;max-width:1200px;margin:auto;padding:3rem 0}
 section{padding:2rem;margin:2rem 0}
-h2{text-align:center;margin-bottom:1rem}
+h2{text-align:center;margin-bottom:1rem;color:#082f49;}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
 .stat{padding:1rem;background:rgba(255,255,255,.25);border-radius:20px;text-align:center}
-.countdown{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.countdown{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem;color:#fff;}
 .count{padding:1rem;border-radius:20px;background:rgba(255,255,255,.25);min-width:100px}
 .count span{display:block;font-size:2rem;font-weight:900}
 .center{text-align:center}
@@ -68,23 +70,17 @@ padding:1rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:900;
 z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
 @media(max-width:768px){
-.navbar{display:block;text-align:center} 
-.navbar a{display:inline-block;margin:5px 9px 0 9px;}
 h1{font-size:3rem}
-.hero{padding-top: 160px;}
+.hero{padding-top: 2rem;}
 }
 </style>
 </head>
 <body>
 
-<nav class="navbar glass" role="navigation" aria-label="Main Navigation">
-<div><strong>Riverside FCA River Run</strong></div>
-<div>
-<a href="#register">Register</a>
-<a href="#results">Results</a>
-<a href="#contact">Contact</a>
+<!-- Replaced old broken glass link bar with a beautiful event title banner -->
+<div class="top-banner">
+    Riverside FCA River Run 2026
 </div>
-</nav>
 
 <header class="hero">
 <div class="hero-content">
@@ -93,7 +89,6 @@ h1{font-size:3rem}
 <p>Celebrating 20 Years of Running, Community, Faith, and Purpose</p>
 <img src="2026riverrundesign.jpg" alt="Riverside FCA River Run 20th Anniversary Logo" style="max-width:420px;width:100%;margin:2rem auto;display:block">
 <a href="https://endurancecui.active.com/new/events/97358816/select-race?e4p=40e9a8d9-9e99-4c55-a9af-f3928595eb8e&e4ts=1782183838&e4q=d0a61611-b2bc-4881-8429-ea9c164dcd77&e4c=active&e4e=snawe00000000&e4h=5ffb7a027def4ece61afa4f76f369dfb&e4rt=Safetynet&_p=3482426401298877" class="btn primary" target="_blank" rel="noopener" aria-label="Register Online via Active.com">Register Online</a>
-<!-- Link Checked & Updated to 2026 File -->
 <a href="raceentryform2026.pdf" class="btn secondary" aria-label="Download Printable Entry Form PDF">Printable Entry Form</a>
 
 <div class="countdown" aria-label="Time remaining until race day">
@@ -124,7 +119,6 @@ h1{font-size:3rem}
 <p class="center" style="margin-bottom: 1.5rem;">Race Day Registration: 7:00 AM – 7:55 AM</p>
 <p class="center">
 <a class="btn primary" href="https://endurancecui.active.com/new/events/97358816/select-race?e4p=40e9a8d9-9e99-4c55-a9af-f3928595eb8e&e4ts=1782183838&e4q=d0a61611-b2bc-4881-8429-ea9c164dcd77&e4c=active&e4e=snawe00000000&e4h=5ffb7a027def4ece61afa4f76f369dfb&e4rt=Safetynet&_p=3482426401298877" target="_blank" rel="noopener" aria-label="Register Online via Active.com">Online Registration</a>
-<!-- Link Checked & Updated to 2026 File -->
 <a class="btn primary" href="raceentryform2026.pdf" aria-label="Download Printable Entry Form PDF">Printable Entry Form</a>
 </p>
 </section>
