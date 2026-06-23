@@ -12,22 +12,31 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:Inter,sans-serif;background:#eef6fb;color:#0f172a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+/* Added padding-top to prevent the fixed navbar from overlapping the content */
 .hero{
 min-height:100vh;
+padding-top: 120px; 
+padding-bottom: 2rem;
 background:
 linear-gradient(135deg,rgba(8,47,73,.72),rgba(14,165,233,.45),rgba(22,163,74,.35)),
 url('missouririver.jpg');
 background-size:cover;background-position:center;
 display:flex;align-items:center;justify-content:center;text-align:center;
 }
+
+/* Adjusted background contrast and forced explicit navy blue text color */
 .navbar{
 position:fixed;top:15px;left:50%;transform:translateX(-50%);
 width:95%;max-width:1200px;padding:14px 24px;
-background:rgba(255,255,255,.12);
+background:rgba(238, 246, 251, 0.85);
 -webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px);
 border-radius:20px;display:flex;justify-content:space-between;z-index:1000;
+color:#082f49;
+box-shadow: 0 4px 20px rgba(8, 47, 73, 0.1);
 }
-.navbar a{color:var(--navy);text-decoration:none;margin-left:18px;font-weight:700}
+.navbar a{color:#082f49;text-decoration:none;margin-left:18px;font-weight:700}
+
 .glass{
 background:rgba(255,255,255,.14);
 -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
@@ -57,7 +66,12 @@ position:fixed;right:20px;bottom:20px;background:white;color:#082f49;
 padding:1rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:900;
 z-index:999;
 }
-@media(max-width:768px){.navbar{display:block;text-align:center} h1{font-size:3rem}}
+@media(max-width:768px){
+.navbar{display:block;text-align:center} 
+.navbar a{display:inline-block;margin:5px 9px 0 9px;}
+h1{font-size:3rem}
+.hero{padding-top: 160px;}
+}
 </style>
 </head>
 <body>
@@ -140,8 +154,6 @@ z-index:999;
 <a class="floating-register" href="register.html">Register Now</a>
 
 <script>
-// Using integer arguments guarantees cross-browser safety (especially for Safari)
-// Note: Months are 0-indexed in JavaScript, so September is 8
 const raceDate = new Date(2026, 8, 5, 8, 0, 0).getTime();
 
 function updateCountdown(){
@@ -149,7 +161,7 @@ const now = new Date().getTime();
 const d = raceDate - now;
 
 if (d < 0) {
-return; // Stops execution if the countdown date has passed
+return; 
 }
 
 document.getElementById('days').textContent=Math.floor(d/(1000*60*60*24));
