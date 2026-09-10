@@ -4,176 +4,822 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Riverside FCA River Run 2026</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 :root{
---river:#0ea5e9;--forest:#16a34a;--sky:#38bdf8;--sunrise:#f97316;--navy:#082f49;
+--river:#0ea5e9;
+--forest:#16a34a;
+--sky:#38bdf8;
+--sunrise:#f97316;
+--navy:#082f49;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:#eef6fb;color:#0f172a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 
-/* New Aesthetically Pleasing Header Band replacing the old glass menu */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#eef6fb;
+color:#0f172a;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+/* Top Event Banner */
 .top-banner {
-background: var(--navy);
-color: #fff;
-text-align: center;
-padding: 1rem;
-font-weight: 700;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+background:var(--navy);
+color:#fff;
+text-align:center;
+padding:1rem;
+font-weight:700;
+letter-spacing:0.05em;
+text-transform:uppercase;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Reduced padding-top since navbar is no longer overlapping */
+/* Hero */
 .hero{
 min-height:90vh;
-padding-top: 3rem; 
-padding-bottom: 3rem;
+padding-top:3rem;
+padding-bottom:3rem;
 background:
-linear-gradient(135deg,rgba(8,47,73,.72),rgba(14,165,233,.45),rgba(22,163,74,.35)),
+linear-gradient(
+135deg,
+rgba(8,47,73,.72),
+rgba(14,165,233,.45),
+rgba(22,163,74,.35)
+),
 url('missouririver.jpg');
-background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;text-align:center;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .glass{
 background:rgba(255,255,255,.20);
--webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.3);border-radius:30px;
+-webkit-backdrop-filter:blur(18px);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.3);
+border-radius:30px;
 box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
-.hero-content{max-width:900px;padding:2rem}
-.badge{display:inline-block;padding:.8rem 1.4rem;border-radius999px;background:rgba(255,255,255,.15);margin-bottom:1rem;color:#fff;}
-h1{font-size:3.5rem;font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;}
-.hero-content p {color:#fff;font-size:1.2rem;margin-bottom:1rem;}
-.btn{display:inline-block;margin:.5rem;padding:1rem 2rem;border-radius:999px;text-decoration:none;font-weight:800;transition:transform 0.2s ease}
-.btn:hover{transform:translateY(-2px)}
-.primary{background:#fff;color:#082f49;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-.secondary{border:2px solid #fff;background:rgba(255,255,255,0.15);color:#fff;}
-.container{width:92%;max-width:1200px;margin:auto;padding:3rem 0}
-section{padding:2rem;margin:2rem 0}
-h2{text-align:center;margin-bottom:1rem;color:#082f49;}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-.stat{padding:1rem;background:rgba(255,255,255,.25);border-radius:20px;text-align:center}
-.countdown{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem;color:#fff;}
-.count{padding:1rem;border-radius:20px;background:rgba(255,255,255,.25);min-width:100px}
-.count span{display:block;font-size:2rem;font-weight:900}
-.center{text-align:center}
-table{width:100%;border-collapse:collapse}
-td{padding:12px;border-bottom:1px solid rgba(255,255,255,.3)}
-td a{color:#082f49;font-weight:600;}
-footer{text-align:center;padding:3rem;background:#082f49;color:white;}
-.floating-register{
-position:fixed;right:20px;bottom:20px;background:white;color:#082f49;
-padding:1rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:900;
-z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.2);
+
+.hero-content{
+max-width:900px;
+padding:2rem;
 }
+
+.badge{
+display:inline-block;
+padding:.8rem 1.4rem;
+border-radius:999px;
+background:rgba(255,255,255,.15);
+margin-bottom:1rem;
+color:#fff;
+}
+
+h1{
+font-size:clamp(3rem,8vw,6rem);
+font-weight:900;
+color:#fff;
+}
+
+.hero-content p{
+color:#fff;
+font-size:1.2rem;
+margin-bottom:1rem;
+}
+
+.btn{
+display:inline-block;
+margin:.5rem;
+padding:1rem 2rem;
+border-radius:999px;
+text-decoration:none;
+font-weight:800;
+transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.primary{
+background:#fff;
+color:#082f49;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.secondary{
+border:2px solid #fff;
+background:rgba(255,255,255,0.15);
+color:#fff;
+}
+
+.photo-btn{
+background:var(--forest);
+color:#fff;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.results-btn{
+background:var(--river);
+color:#fff;
+}
+
+.container{
+width:92%;
+max-width:1200px;
+margin:auto;
+padding:3rem 0;
+}
+
+section{
+padding:2rem;
+margin:2rem 0;
+}
+
+h2{
+text-align:center;
+margin-bottom:1rem;
+color:#082f49;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:1rem;
+}
+
+.stat{
+padding:1rem;
+background:rgba(255,255,255,.25);
+border-radius:20px;
+text-align:center;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:1rem;
+flex-wrap:wrap;
+margin-top:2rem;
+color:#fff;
+}
+
+.count{
+padding:1rem;
+border-radius:20px;
+background:rgba(255,255,255,.25);
+min-width:100px;
+}
+
+.count span{
+display:block;
+font-size:2rem;
+font-weight:900;
+}
+
+.center{
+text-align:center;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+padding:14px;
+background:rgba(8,47,73,.9);
+color:#fff;
+text-align:left;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid rgba(8,47,73,.15);
+}
+
+td a{
+color:#082f49;
+font-weight:700;
+text-decoration:none;
+}
+
+td a:hover{
+text-decoration:underline;
+}
+
+/* Photo Section */
+.photo-section{
+text-align:center;
+}
+
+.photo-card{
+background:rgba(255,255,255,.45);
+border-radius:24px;
+padding:2rem;
+margin-top:1.5rem;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.photo-card img{
+max-width:100%;
+width:700px;
+border-radius:18px;
+display:block;
+margin:0 auto 1.5rem;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+/* Results Cards */
+.result-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:1rem;
+margin-top:1.5rem;
+}
+
+.result-card{
+background:rgba(255,255,255,.55);
+border-radius:20px;
+padding:1.5rem;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.result-card h3{
+color:var(--navy);
+margin-bottom:.5rem;
+}
+
+footer{
+text-align:center;
+padding:3rem;
+background:#082f49;
+color:white;
+}
+
+.floating-register{
+position:fixed;
+right:20px;
+bottom:20px;
+background:white;
+color:#082f49;
+padding:1rem 1.5rem;
+border-radius:999px;
+text-decoration:none;
+font-weight:900;
+z-index:999;
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
+}
+
 @media(max-width:768px){
-h1{font-size:3rem}
-.hero{padding-top: 2rem;}
+
+h1{
+font-size:3rem;
+}
+
+.hero{
+padding-top:2rem;
+}
+
+section{
+padding:1.5rem;
+}
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+.floating-register{
+right:10px;
+bottom:10px;
+padding:.8rem 1rem;
+font-size:.9rem;
+}
+
 }
 </style>
 </head>
+
 <body>
 
-<!-- Replaced old broken glass link bar with a beautiful event title banner -->
+<!-- Event Banner -->
 <div class="top-banner">
-    Riverside FCA River Run 2026
+Riverside FCA River Run 2026
 </div>
 
+<!-- HERO -->
 <header class="hero">
-<div class="hero-content">
-<div class="badge">20th Annual Event • September 5, 2026</div>
-<h1>Riverside FCA<br>River Run 2026</h1>
-<p>Celebrating 20 Years of Running, Community, Faith, and Purpose</p>
-<img src="2026riverrundesign.jpg" alt="Riverside FCA River Run 20th Anniversary Logo" style="max-width:420px;width:100%;margin:2rem auto;display:block">
-<a href="https://endurancecui.active.com/new/events/97358816/select-race?e4p=40e9a8d9-9e99-4c55-a9af-f3928595eb8e&e4ts=1782183838&e4q=d0a61611-b2bc-4881-8429-ea9c164dcd77&e4c=active&e4e=snawe00000000&e4h=5ffb7a027def4ece61afa4f76f369dfb&e4rt=Safetynet&_p=3482426401298877" class="btn primary" target="_blank" rel="noopener" aria-label="Register Online via Active.com">Register Online</a>
-<a href="raceentryform2026.pdf" class="btn secondary" aria-label="Download Printable Entry Form PDF">Printable Entry Form</a>
 
-<div class="countdown" aria-label="Time remaining until race day">
-<div class="count"><span id="days">0</span>Days</div>
-<div class="count"><span id="hours">0</span>Hours</div>
-<div class="count"><span id="minutes">0</span>Minutes</div>
-<div class="count"><span id="seconds">0</span>Seconds</div>
+<div class="hero-content">
+
+<div class="badge">
+20th Annual Event • September 5, 2026
 </div>
+
+<h1>
+Riverside FCA<br>
+River Run 2026
+</h1>
+
+<p>
+Celebrating 20 Years of Running, Community, Faith, and Purpose
+</p>
+
+<img 
+src="2026riverrundesign.jpg" 
+alt="Riverside FCA River Run 20th Anniversary Logo"
+style="max-width:420px;width:100%;margin:2rem auto;display:block"
+>
+
+<!-- Photos Button -->
+<a 
+href="#photos" 
+class="btn photo-btn"
+aria-label="View 2026 Riverside FCA River Run Photos"
+>
+View 2026 Race Photos
+</a>
+
+<!-- Results Button -->
+<a 
+href="#results" 
+class="btn secondary"
+aria-label="View 2026 Riverside FCA River Run Results"
+>
+View Race Results
+</a>
+
+<div class="countdown" id="countdown" aria-label="Time remaining until race day">
+
+<div class="count">
+<span id="days">0</span>
+Days
+</div>
+
+<div class="count">
+<span id="hours">0</span>
+Hours
+</div>
+
+<div class="count">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+<div class="count">
+<span id="seconds">0</span>
+Seconds
+</div>
+
+</div>
+
 </div>
 </header>
 
+
 <main class="container">
 
+<!-- COMPLETED EVENT -->
 <section class="glass">
-<h2>Riverside FCA River Run 2026 is Here!</h2>
-<p class="center">Registration is now open for our 20th Annual Event.</p><br>
-<p class="center">Thank you to every participant, volunteer, sponsor, and supporter who helped make the 2025 Riverside FCA River Run a tremendous success.</p>
-<div class="stats" style="margin-top:2rem">
-<div class="stat"><h3>20th</h3><p>Annual Event</p></div>
-<div class="stat"><h3>5K</h3><p>Run</p></div>
-<div class="stat"><h3>10K</h3><p>Run</p></div>
-<div class="stat"><h3>20 lb</h3><p>Ruck</p></div>
-</div>
-</section>
 
-<section id="register" class="glass">
-<h2>Registration</h2>
-<p class="center" style="margin-bottom: 1.5rem;">Race Day Registration: 7:00 AM – 7:55 AM</p>
+<h2>
+Riverside FCA River Run 2026 is Complete!
+</h2>
+
 <p class="center">
-<a class="btn primary" href="https://endurancecui.active.com/new/events/97358816/select-race?e4p=40e9a8d9-9e99-4c55-a9af-f3928595eb8e&e4ts=1782183838&e4q=d0a61611-b2bc-4881-8429-ea9c164dcd77&e4c=active&e4e=snawe00000000&e4h=5ffb7a027def4ece61afa4f76f369dfb&e4rt=Safetynet&_p=3482426401298877" target="_blank" rel="noopener" aria-label="Register Online via Active.com">Online Registration</a>
-<a class="btn primary" href="raceentryform2026.pdf" aria-label="Download Printable Entry Form PDF">Printable Entry Form</a>
+Registration for the 21st annual race will open in May 2027.
 </p>
+
+<br>
+
+<p class="center">
+Thank you to every participant, volunteer, sponsor, and supporter who helped make the 2026 Riverside FCA River Run a tremendous success.
+</p>
+
+<div class="stats" style="margin-top:2rem">
+
+<div class="stat">
+<h3>20th</h3>
+<p>Annual Event</p>
+</div>
+
+<div class="stat">
+<h3>5K</h3>
+<p>Run</p>
+</div>
+
+<div class="stat">
+<h3>10K</h3>
+<p>Run</p>
+</div>
+
+<div class="stat">
+<h3>20 lb</h3>
+<p>Ruck</p>
+</div>
+
+</div>
+
+<div class="center" style="margin-top:2rem">
+
+<a 
+href="#photos" 
+class="btn photo-btn"
+>
+View 20th Annual Race Photos
+</a>
+
+<a 
+href="#results" 
+class="btn results-btn"
+>
+View 2026 Race Results
+</a>
+
+</div>
+
 </section>
 
-<section class="glass">
-<h2>Supporting the American Cancer Society</h2>
-<p class="center"><img src="acslogo.png" alt="American Cancer Society Logo" style="max-height:100px" loading="lazy"></p>
-<p class="center">A portion of race proceeds benefits the American Cancer Society.</p>
+
+<!-- REGISTRATION -->
+<section id="register" class="glass">
+
+<h2>
+Registration
+</h2>
+
+<p class="center" style="margin-bottom:1.5rem;">
+The 2026 Riverside FCA River Run has been completed.
+</p>
+
+<p class="center">
+Registration for the 21st Annual Riverside FCA River Run will open in May 2027.
+</p>
+
 </section>
+
+
+<!-- AMERICAN CANCER SOCIETY -->
+<section class="glass">
+
+<h2>
+Supporting the American Cancer Society
+</h2>
+
+<p class="center">
+
+<img 
+src="acslogo.png" 
+alt="American Cancer Society Logo" 
+style="max-height:100px"
+loading="lazy"
+>
+
+</p>
+
+<p class="center">
+A portion of race proceeds benefits the American Cancer Society.
+</p>
+
+</section>
+
+
+<!-- =============================== -->
+<!-- 2026 PHOTO SECTION -->
+<!-- =============================== -->
+
+<section id="photos" class="glass photo-section">
+
+<h2>
+20th Annual Race Photos
+</h2>
+
+<p class="center">
+Relive the 20th Annual Riverside FCA River Run!
+</p>
+
+<div class="photo-card">
+
+<img 
+src="2026riverrunphotos.jpg" 
+alt="Photos from the 20th Annual Riverside FCA River Run"
+loading="lazy"
+>
+
+<p style="margin-bottom:1rem;">
+Check out pictures from the 2026 20th Annual Riverside FCA River Run, including race-day action, runners, volunteers, and the Riverside community.
+</p>
+
+<a 
+href="2026riverrunphotos.html" 
+class="btn photo-btn"
+target="_blank"
+rel="noopener"
+aria-label="Open the 2026 Riverside FCA River Run Photo Gallery"
+>
+Open 2026 Photo Gallery
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =============================== -->
+<!-- RACE RESULTS -->
+<!-- =============================== -->
 
 <section id="results" class="glass">
-<h2>Race Results</h2>
+
+<h2>
+Race Results
+</h2>
+
+<p class="center" style="margin-bottom:1.5rem;">
+View official results from the 20th Annual Riverside FCA River Run.
+</p>
+
+
+<!-- 2026 RESULTS -->
+<div class="result-grid">
+
+<div class="result-card">
+
+<h3>
+2026 5K
+</h3>
+
+<p>
+20th Annual River Run
+</p>
+
+<a 
+href="2026riverrun5kresults.pdf"
+class="btn results-btn"
+target="_blank"
+rel="noopener"
+aria-label="View 2026 5K Race Results PDF"
+>
+View 5K Results
+</a>
+
+</div>
+
+
+<div class="result-card">
+
+<h3>
+2026 10K
+</h3>
+
+<p>
+20th Annual River Run
+</p>
+
+<a 
+href="2026riverrun10kresults.pdf"
+class="btn results-btn"
+target="_blank"
+rel="noopener"
+aria-label="View 2026 10K Race Results PDF"
+>
+View 10K Results
+</a>
+
+</div>
+
+
+<div class="result-card">
+
+<h3>
+2026 10K Ruck
+</h3>
+
+<p>
+20th Annual River Run
+</p>
+
+<a 
+href="2026riverrun10kruckresults.pdf"
+class="btn results-btn"
+target="_blank"
+rel="noopener"
+aria-label="View 2026 10K Ruck Race Results PDF"
+>
+View 10K Ruck Results
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Previous Results -->
+<h3 style="margin-top:2.5rem;margin-bottom:1rem;color:#082f49;">
+Previous Race Results
+</h3>
+
 <table>
+
 <thead>
-<tr style="display:none;"><th>Year</th><th>Link Options</th></tr>
+
+<tr>
+<th>Year</th>
+<th>Race</th>
+<th>Results</th>
+</tr>
+
 </thead>
+
 <tbody>
-<tr><td>2025 Results</td><td><a href="2025riverrun5kresults.pdf" aria-label="2025 5K Results PDF">5K</a> | <a href="2025riverrun10kresults.pdf" aria-label="2025 10K Results PDF">10K</a></td></tr>
-<tr><td>2024 Results</td><td><a href="20245kresults.pdf" aria-label="2024 5K Results PDF">View</a></td></tr>
-<tr><td>2023 Results</td><td><a href="20235kresults.pdf" aria-label="2023 5K Results PDF">View</a></td></tr>
+
+<tr>
+
+<td>2025</td>
+
+<td>5K / 10K</td>
+
+<td>
+<a 
+href="2025riverrun5kresults.pdf"
+target="_blank"
+rel="noopener"
+aria-label="2025 5K Results PDF"
+>
+5K
+</a>
+
+&nbsp; | &nbsp;
+
+<a 
+href="2025riverrun10kresults.pdf"
+target="_blank"
+rel="noopener"
+aria-label="2025 10K Results PDF"
+>
+10K
+</a>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>2024</td>
+
+<td>5K</td>
+
+<td>
+<a 
+href="20245kresults.pdf"
+target="_blank"
+rel="noopener"
+aria-label="2024 5K Results PDF"
+>
+View Results
+</a>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>2023</td>
+
+<td>5K</td>
+
+<td>
+<a 
+href="20235kresults.pdf"
+target="_blank"
+rel="noopener"
+aria-label="2023 5K Results PDF"
+>
+View Results
+</a>
+</td>
+
+</tr>
+
 </tbody>
+
 </table>
+
 </section>
 
+
+<!-- CONTACT -->
 <section id="contact" class="glass">
-<h2>Contact</h2>
-<p class="center"><strong><a href="mailto:jcera@cyclones114.org">Race Director</a></strong>
+
+<h2>
+Contact
+</h2>
+
+<p class="center">
+
+<strong>
+<a href="mailto:jcera@cyclones114.org">
+Race Director
+</a>
+</strong>
+
+</p>
+
 </section>
 
 </main>
 
+
+<!-- FOOTER -->
 <footer>
-<h3>Riverside FCA River Run</h3>
-<p>September 5, 2026</p>
+
+<h3>
+Riverside FCA River Run
+</h3>
+
+<p>
+20th Annual Event • September 5, 2026
+</p>
+
+<p style="margin-top:.75rem;">
+Thank you for supporting Riverside FCA and the Riverside community!
+</p>
+
 </footer>
 
-<a class="floating-register" href="https://endurancecui.active.com/new/events/97358816/select-race?e4p=40e9a8d9-9e99-4c55-a9af-f3928595eb8e&e4ts=1782183838&e4q=d0a61611-b2bc-4881-8429-ea9c164dcd77&e4c=active&e4e=snawe00000000&e4h=5ffb7a027def4ece61afa4f76f369dfb&e4rt=Safetynet&_p=3482426401298877" target="_blank" rel="noopener" aria-label="Register Now via Active.com">Register Now</a>
+
+<!-- FLOATING PHOTO BUTTON -->
+<a 
+class="floating-register" 
+href="#photos"
+aria-label="View 2026 Race Photos"
+>
+2026 Photos
+</a>
+
 
 <script>
+
+/* Race Date */
 const raceDate = new Date(2026, 8, 5, 8, 0, 0).getTime();
 
+
 function updateCountdown(){
+
 const now = new Date().getTime();
+
 const d = raceDate - now;
 
-if (d < 0) {
-return; 
+
+/* Hide countdown after race day */
+if(d < 0){
+
+document.getElementById('countdown').style.display = 'none';
+
+return;
+
 }
 
-document.getElementById('days').textContent=Math.floor(d/(1000*60*60*24));
-document.getElementById('hours').textContent=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-document.getElementById('minutes').textContent=Math.floor((d%(1000*60*60))/(1000*60));
-document.getElementById('seconds').textContent=Math.floor((d%(1000*60))/1000);
+
+document.getElementById('days').textContent =
+Math.floor(d/(1000*60*60*24));
+
+document.getElementById('hours').textContent =
+Math.floor((d%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById('minutes').textContent =
+Math.floor((d%(1000*60*60))/(1000*60));
+
+document.getElementById('seconds').textContent =
+Math.floor((d%(1000*60))/1000);
+
 }
-setInterval(updateCountdown,1000);updateCountdown();
+
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
 </script>
+
 </body>
 </html>
